@@ -885,6 +885,7 @@ function startMic() {
 }
 
 function stopMic() {
+  micMode = null;
   if (recognition && isListening) { try { recognition.stop(); } catch(e) {} }
   isListening = false;
   setMicState('idle');
@@ -905,6 +906,7 @@ function startConvMic() {
 }
 
 function stopConvMic() {
+  micMode = null;
   if (recognition && isListening) { try { recognition.stop(); } catch(e) {} }
   isListening = false;
   const micBtn = document.getElementById('conv-mic-btn');
